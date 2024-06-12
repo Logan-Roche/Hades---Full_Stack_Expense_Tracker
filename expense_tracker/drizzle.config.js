@@ -4,6 +4,6 @@ export default defineConfig({
   schema: './utils/schema.jsx',
   dialect: 'postgresql', // 'postgresql' | 'mysql' | 'sqlite'
   dbCredentials: {
-    url: "",
+    url: "REPLACE BEFORE STARTING",
   }
 });
