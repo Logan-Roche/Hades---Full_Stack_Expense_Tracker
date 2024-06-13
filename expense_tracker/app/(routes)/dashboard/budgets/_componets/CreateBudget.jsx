@@ -78,6 +78,7 @@ function CreateBudget() {
                             setEmojiIcon(e.emoji)
                             SetOpenEmojiPicker(false)
                         }}
+                        className='bg-white'
                         />
                     </div>
                 </div>
