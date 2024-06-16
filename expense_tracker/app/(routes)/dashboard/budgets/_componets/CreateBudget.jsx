@@ -23,7 +23,7 @@ import { DialogClose } from '@radix-ui/react-dialog'
 
 
 
-function CreateBudget() {
+function CreateBudget({refreshData}) {
 
     const [emojiIcon, setEmojiIcon] = useState('');
     const [openEmojiPicker,SetOpenEmojiPicker] = useState(false);
@@ -43,6 +43,7 @@ function CreateBudget() {
 
         if(result)
         {
+            refreshData()
             toast('New Budget Created!')
         }
     }
@@ -71,7 +72,7 @@ function CreateBudget() {
                     >
                         {emojiIcon}
                     </Button>
-                    <div className='absolute'>
+                    <div className='absolute z-20'>
                         <EmojiPicker
                         open={openEmojiPicker}
                         onEmojiClick={(e)=>{
