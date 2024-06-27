@@ -28,9 +28,9 @@ function SideNav() {
         },
         {
             id: 4,
-            name: 'Upgrade',
+            name: 'Plaid',
             icon: ShieldCheck,
-            path: '/dashboard/upgrade'
+            path: '/dashboard/plaid'
         },
     ]
 
