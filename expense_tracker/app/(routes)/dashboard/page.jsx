@@ -27,7 +27,8 @@ function Dashbaord() {
     const result = await db.select({
       ...getTableColumns(Budgets),
       totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
-      totalItem: sql`count(${Expenses.id})`.mapWith(Number)
+      totalItem: sql`count(${Expenses.id})`.mapWith(Number),
+      remaining: sql`sum(${Budgets.amount - Expenses.amount})`
     }).from(Budgets)
       .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
