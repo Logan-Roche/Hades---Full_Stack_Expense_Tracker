@@ -17,6 +17,7 @@ function DashboardLayout({ children }) {
     user && checkUserBudgets()
   }, [user])
 
+
   const checkUserBudgets = async () => {
     const result = await db.select()
       .from(Budgets)

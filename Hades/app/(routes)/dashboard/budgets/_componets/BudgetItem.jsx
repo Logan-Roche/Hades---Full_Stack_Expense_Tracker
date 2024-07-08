@@ -3,6 +3,8 @@ import React from 'react'
 
 function BudgetItem({ budget }) {
 
+
+
   const calculateProgressPerc = () => {
     const perc = (budget.totalSpend / budget.amount) * 100;
     return perc.toFixed(2);
@@ -45,5 +47,4 @@ function BudgetItem({ budget }) {
 
   )
 }
-
 export default BudgetItem

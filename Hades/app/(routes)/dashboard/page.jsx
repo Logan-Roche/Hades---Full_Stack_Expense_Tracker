@@ -14,6 +14,7 @@ function Dashbaord() {
   const { user } = useUser();
   const [budgetList, setBudgetList] = useState([]);
   const [expensesList, setExpensesList] = useState([])
+  const [len, setLen] = useState()
 
   useEffect(() => {
     user && getBudgetList();
@@ -21,14 +22,17 @@ function Dashbaord() {
 
   /**
    * used to get budget list
+   * 
    */
+
+
+
   const getBudgetList = async () => {
 
     const result = await db.select({
       ...getTableColumns(Budgets),
       totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
-      totalItem: sql`count(${Expenses.id})`.mapWith(Number),
-      remaining: sql`sum(${Budgets.amount - Expenses.amount})`
+      totalItem: sql`count(${Expenses.id})`.mapWith(Number)
     }).from(Budgets)
       .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
@@ -36,6 +40,8 @@ function Dashbaord() {
       .orderBy(desc(Budgets.id));
 
     setBudgetList(result);
+    setLen(result.length);
+
     getAllExpenses();
   }
 
@@ -65,6 +71,7 @@ function Dashbaord() {
         <div className='md:col-span-2'>
           <AreaChartDashboard
             budgetList={budgetList}
+            len={len}
           />
 
           <ExpenseListTable

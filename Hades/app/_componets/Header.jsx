@@ -14,10 +14,10 @@ function Header() {
 
   return (
     <div className='p-5 flex justify-between items-center border shadow-sm'>
-      <Image src={'./logo.svg'}
+      <Image src={'./Hades.svg'}
         alt='logo'
-        width={160}
-        height={100}
+        width={250}
+        height={150}
       />
 
       {isSignedIn ?

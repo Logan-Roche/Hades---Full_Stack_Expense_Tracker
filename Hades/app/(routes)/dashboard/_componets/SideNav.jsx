@@ -38,17 +38,17 @@ function SideNav() {
 
     return (
         <div className='h-screen p-5 border shadow-sm'>
-            <Image src={'/logo.svg'}
+            <Image src={'/Hades.svg'}
                 alt='logo'
-                width={160}
-                height={100}
+                width={200}
+                height={150}
             />
             <div className='mt-5'>
                 {menuList.map((menu) => (
                     <Link key={menu.id} href={menu.path}>
                         <h2 key={menu.id} className={`flex gap-2 item-center text-gray-500 mb-2
-                            font-medium p-5 cursor-pointer rounded-md hover:text-primary hover:bg-blue-100
-                            ${path == menu.path && 'text-primary bg-blue-100'}`}>
+                            font-medium p-5 cursor-pointer rounded-md hover:text-primary hover:bg-red-100
+                            ${path == menu.path && 'text-primary bg-red-100'}`}>
                             <menu.icon />
                             {menu.name}
                         </h2>
