@@ -14,6 +14,7 @@ function Dashbaord() {
   const { user } = useUser();
   const [budgetList, setBudgetList] = useState([]);
   const [expensesList, setExpensesList] = useState([])
+  const [lineGraphData, setLineGraphData] = useState([])
   const [len, setLen] = useState()
 
   useEffect(() => {
@@ -40,7 +41,6 @@ function Dashbaord() {
       .orderBy(desc(Budgets.id));
 
     setBudgetList(result);
-    setLen(result.length);
 
     getAllExpenses();
   }

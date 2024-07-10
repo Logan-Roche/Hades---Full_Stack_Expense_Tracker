@@ -25,19 +25,13 @@ function SideNav() {
             name: 'Expenses',
             icon: ReceiptText,
             path: '/dashboard/expenses'
-        },
-        {
-            id: 4,
-            name: 'Plaid',
-            icon: ShieldCheck,
-            path: '/dashboard/plaid'
-        },
+        }
     ]
 
     const path = usePathname();
 
     return (
-        <div className='h-screen p-5 border shadow-sm'>
+        <div className='h-screen p-5 border shadow-sm flex-auto'>
             <Image src={'/Hades.svg'}
                 alt='logo'
                 width={200}
