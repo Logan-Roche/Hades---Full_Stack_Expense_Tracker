@@ -11,6 +11,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
+import { Router } from 'next/navigation'
 
 
 function Hero() {
@@ -47,15 +48,11 @@ function Hero() {
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
-                  <AlertDialogAction >
-                    <div>
-                      <a
-                        href="/sign-in"
-                      >
-                        Get Started
-                      </a>
+                  <AlertDialogAction asChild>
+                    <a href='/sign-in'                    >
+                      Get Started
+                    </a>
 
-                    </div>
                   </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>

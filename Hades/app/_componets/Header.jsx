@@ -29,40 +29,40 @@ function Header() {
         alt='logo'
         width={250}
         height={150}
+        className=''
       />
 
       {isSignedIn ?
         <UserButton /> :
-        <AlertDialog >
-          <AlertDialogTrigger
-            className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-black focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-          >
-            Get Started</AlertDialogTrigger>
-          <AlertDialogContent className="bg-white">
-            <AlertDialogHeader>
-              <AlertDialogTitle>Attention</AlertDialogTitle>
-              <AlertDialogDescription>
-                To continue without an account use provided Test Account.<br />
-                Username: test_user<br />
-                Password: hades_test
+        <div className=' hidden sm:block '>
+          <AlertDialog >
+            <AlertDialogTrigger
+              className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-black focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+            >
+              Get Started</AlertDialogTrigger>
+            <AlertDialogContent className="bg-white">
+              <AlertDialogHeader>
+                <AlertDialogTitle>Attention</AlertDialogTitle>
+                <AlertDialogDescription>
+                  To continue without an account use provided Test Account.<br />
+                  Username: test_user<br />
+                  Password: hades_test
 
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction >
-                <div>
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction asChild>
                   <a
                     href="/sign-in"
                   >
                     Get Started
                   </a>
-
-                </div>
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+        </div>
       }
     </div>
   )
